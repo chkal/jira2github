@@ -1,0 +1,12 @@
+{
+  "name": "jira2github",
+  "version": "1.0.0",
+  "description": "JIRA to GitHub issue migration scripts",
+  "author": "Christian Kaltepoth <christian@kaltepoth.de>",
+  "license": "MIT",
+  "dependencies": {
+    "j2m": "^1.0.0",
+    "node-fetch": "^1.6.3",
+    "yargs": "^6.5.0"
+  }
+}

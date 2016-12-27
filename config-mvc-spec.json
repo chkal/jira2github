@@ -1,0 +1,22 @@
+{
+  "jira": {
+    "url": "https://java.net/jira",
+    "project": "MVC_SPEC"
+  },
+  "github": {
+    "repo": "chkal/mvc-spec-migration-test"
+  },
+  "migration": {
+    "copyLabels": true
+  },
+  "mapping": {
+    "users": {
+      "chkal": "chkal"
+    },
+    "labels": {
+      "Bug": "bug",
+      "New Feature": "enhancement",
+      "Improvement": "enhancement"
+    }
+  }
+}
