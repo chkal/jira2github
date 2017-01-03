@@ -5,8 +5,9 @@
   "author": "Christian Kaltepoth <christian@kaltepoth.de>",
   "license": "MIT",
   "dependencies": {
-    "j2m": "^1.0.0",
-    "node-fetch": "^1.6.3",
-    "yargs": "^6.5.0"
+    "flow-bin": "0.37.4",
+    "j2m": "1.0.0",
+    "node-fetch": "1.6.3",
+    "yargs": "6.5.0"
   }
 }
