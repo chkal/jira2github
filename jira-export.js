@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
+// @flow
+
 const argv = require( "yargs" ).argv;
 const JiraClient = require( "./lib/jira-client" );
 const IssueConverter = require( "./lib/converter" );
 const utils = require( "./lib/utils" );
 
-let config = null;
+let config /*: any */ = null;
 if( argv.config ) {
   config = require( "./" + argv.config );
 }
