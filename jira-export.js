@@ -33,14 +33,16 @@ client.getServerInfo().then( serverInfo => {
 
   console.log( `Found ${issues.length} issues for project ${config.jira.project}` );
 
-  const tasks = issues.map( issue => {
-    console.log( "Fetching details of: " + issue );
-    return client.getIssueDetails( issue ).then( details => {
-      return converter.convert( details );
-    } )
+  const factories = issues.map( issue => {
+    return () => {
+      console.log( "Fetching details of: " + issue );
+      return client.getIssueDetails( issue ).then( details => {
+        return converter.convert( details );
+      } )
+    };
   } );
 
-  return utils.runSequentially( tasks );
+  return utils.runSequentially( factories );
 
 } )
 .then( issues => {
