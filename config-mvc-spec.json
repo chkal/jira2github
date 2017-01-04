@@ -7,7 +7,7 @@
     "repo": "chkal/mvc-spec-migration-test"
   },
   "migration": {
-    "copyLabels": true
+    "copyLabels": false
   },
   "mapping": {
     "users": {

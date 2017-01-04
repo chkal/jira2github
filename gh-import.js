@@ -38,12 +38,16 @@ client.getMyself().then( user => {
 } )
 .then( () => {
   console.log( `Starting to import ${issues.length} issues...` );
-  const tasks = issues.map( issue => importer.importIssue( issue ) );
-  return utils.runSequentially( tasks );
+  const factories = issues.map( issue => {
+    return () => {
+      return importer.importIssue( issue );
+    };
+  } );
+  return utils.runSequentially( factories );
 } )
 .then( results => {
   const statusUrls = results.map( r => r.url );
-  return utils.writeFile( "status.json", JSON.stringify( statusUrls, null, 2 ) );
+  return utils.writeFile( "work/status.json", JSON.stringify( statusUrls, null, 2 ) );
 } )
 .then( () => {
   console.log( "DONE!" );
