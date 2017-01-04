@@ -48,10 +48,6 @@ client.getServerInfo().then( serverInfo => {
 
 } )
 .then( issues => {
-  const content = JSON.stringify( issues, null, 2 );
-  return utils.writeFile( output, content );
-} )
-.then( () => {
   console.log( "DONE!" );
 } )
 .catch( error => {
